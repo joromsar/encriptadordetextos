@@ -1,0 +1,40 @@
+<meta charset="UTF-8">
+<h2>Juego Adivinar Números</h2>
+
+<script>
+
+    function imprimir(frase) {
+        document.write(frase);
+        document.write("</br></br></br>")
+    }
+
+    var inicioDeSesionRegistrado = "alura";
+    var contrasenhaRegistrada = "alura321";
+
+
+
+    var intentos = 3;
+    var contador = 1;
+
+    while(contador <= intentos){
+
+        var inicioDeSesionIngresado = prompt("Ingrese su usuario");
+        var contrasenhaIngresada = prompt("Ingrese su contraseña");
+        
+        if( inicioDeSesionRegistrado == inicioDeSesionIngresado && contrasenhaRegistrada == contrasenhaIngresada ) {
+            alert("Bienvenido al sistema " + inicioDeSesionIngresado);
+            break;
+        }
+
+        else {
+
+            alert("inicio de sesión inválido. Favor intente de nuevo");
+
+            contador++;
+        }
+
+}
+
+imprimir("fin")
+
+</script>

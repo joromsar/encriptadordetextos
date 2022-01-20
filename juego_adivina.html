@@ -1,0 +1,51 @@
+<meta charset="UTF-8">
+<h2>Juego Adivinar Números</h2>
+
+<script>
+
+    function imprimir(frase) {
+        document.write(frase);
+        document.write("</br></br></br>")
+    }
+
+//Los números pares son aquéllos que pueden dividirse entre dos, 
+//y los impares los que no pueden dividirse entre dos.
+var numeroPensado = Math.round(Math.random()*10);
+var intentos = 3;
+var contador = 1;
+
+
+while (contador <= intentos) {
+    
+    var numeroLanzado = parseInt(prompt("Ingresa un número entre 0 y 10 "));
+    
+    if (numeroPensado == numeroLanzado){
+        
+        alert("Felicidades, usted acerto, en el intento número "+ intentos + " el número era el " + numeroPensado)
+        break;
+    
+    }
+    
+    else {
+    
+    alert("Vuelve a intentarlo, en esta oportunidad no conseguiste acertar esta vez");
+    
+    }
+
+    contador++;
+
+}
+
+if (numeroPensado == numeroLanzado){
+        
+    imprimir("Felicidades, usted acerto, en el intento número "+ intentos + " el número era el " + numeroPensado)
+
+}
+
+else {
+    imprimir("Lo sentimos, Vuelve a intentarlo, en esta oportunidad no conseguiste acertar" + " el numero pensado era: " + numeroPensado);
+}
+
+imprimir("fin")
+
+</script>

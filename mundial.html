@@ -1,0 +1,22 @@
+<meta charset="UTF-8">
+<h2>Calcula el año en los que se celebro el mundial de futbol de la FIFA</h2>
+
+<script>
+
+    function imprimir(frase) {
+        document.write(frase);
+        document.write("</br></br></br>")
+    }
+
+var anioMundial = 1930;
+var limiteMundial = parseInt(prompt("Ingresa el año en la que deseas calcular el año del mundial "));
+
+while (anioMundial <= limiteMundial){
+    imprimir("Hubo un mundial en el año " + anioMundial)
+    anioMundial = anioMundial + 4;
+}
+
+imprimir("Fin del programa")
+        
+
+</script>

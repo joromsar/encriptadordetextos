@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+<h3>Validacion Licencia Conduccion</h3>
+
+<script>
+
+    function imprimir(frase) {
+        document.write(frase);
+        document.write("</br></br></br>")
+    }
+
+   var edad = parseInt(prompt("Ingresa tu edad actual "));
+   var conLicencia = prompt("Cuentas con Licencia de Conducción? Responde S o N ");
+
+   if ((edad >=18) && (conLicencia == "S" || "s")) {
+     
+           imprimir("Puedes conducir adelante")
+
+   }
+
+
+   if ((edad<18) && (conLicencia == "S")){
+      
+            imprimir("No Puedes conducir, lo sentimos")
+        
+    }  
+
+
+   if ((edad >=18) && (conLicencia == "N")){
+
+        imprimir("No puedes conducir, lo sentimos")
+    }
+
+        
+
+</script>

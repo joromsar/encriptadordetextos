@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+<h2>Tablas de multiplicar</h2>
+
+<script>
+
+    function imprimir(frase) {
+        document.write(frase);
+        document.write("</br></br></br>")
+    }
+
+
+var numeroMultiplicar = parseInt(prompt("Ingresa el numero que deseas calcular la tabla de multiplicar"))
+var multiplicador = 1
+
+while (multiplicador <=10) {
+
+   imprimir("<h1>" + numeroMultiplicar + " * " + multiplicador + " = " + numeroMultiplicar * multiplicador + "</h1>")
+   multiplicador++;
+
+}
+
+imprimir("endWhile")
+
+for (var multiplicador = 1; multiplicador <=10; multiplicador++) {
+    
+    imprimir("<h1>" + numeroMultiplicar + " * " + multiplicador + " = " + numeroMultiplicar * multiplicador + "</h1>")
+
+}
+
+imprimir("endFor")
+
+</script>

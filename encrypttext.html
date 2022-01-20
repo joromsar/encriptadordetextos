@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Comforter+Brush&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Average+Sans&display=swap" rel="stylesheet"> 
+</head>
+<title>Encriptador Online de Textos</title>
+
+
+<header>
+  <nav class="navbar is-transparent" style="background-color:transparent; padding:20px;">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://bulma.io" style="color:#ffffff">
+        <i class="fas fa-asterisk" style="color:#00d1b2; font-size:20px;"></i><i class="fas fa-asterisk" style="color:#00d1b2; font-size:20px;"></i><i class="fas fa-asterisk" style="color:#00d1b2; margin-right:5px; font-size:20px;"></i> <h3 style="font-family: 'Comforter Brush', cursive; font-size:40px; color:#9b59b6; font-weight:bold; text-shadow: 1px 1px 2px black;">EncryptText</h3>
+      </a>
+      <div class="navbar-burger" data-target="navbarExampleTransparentExample">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-start ">
+        
+
+        </div>
+      </div>
+  
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            <p class="control">
+              <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms">
+                <span class="icon">
+                  <i class="fab fa-twitter"></i>
+                </span>
+                <span>
+                  Tweet
+                </span>
+              </a>
+            </p>
+            <p class="control">
+              <a class="button is-primary" href="https://github.com/jgthms/bulma/releases/download/0.9.3/bulma-0.9.3.zip">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>GitHub</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<style>
+
+  button.button.is-link:hover{
+
+    background-color:#00d1b2;
+    color:#ffffff;
+    border:1px solid #00d1b2;
+  }
+
+  button.button.is-primary:hover{
+
+    background-color:#485fc7;
+    color:#ffffff;
+    border:1px solid #485fc7;
+
+  }
+</style>
+
+<body style="height:120vh; background-image:url('https://images.pexels.com/photos/1418595/pexels-photo-1418595.jpeg');background-repeat: no-repeat;
+background-size: cover;">
+
+<div style="width:100%; margin-left:auto; margin-right:auto; margin-top:0px;">
+  <h1 style="font-family: 'Comforter Brush', cursive; font-size:7vw; text-align:center; color:#ffffff; padding-top:30px; text-shadow: 1px 1px 2px black;">Encriptador de Texto Online</h1>
+</div>
+
+<div class="card" style="margin-top:20px; width:80%; margin-left:auto; margin-right:auto; border-radius:18px; padding:20px; margin-bottom:70px;">
+  
+<label class="label subtitle" for="textoingresado" style="font-family: 'Comforter Brush', cursive; font-size:30px; text-align:left; color:#000; padding-top:30px; text-shadow: 1px 1px 2px black;">Ingresa el texto que deseas encriptar</label>
+<input class="input" type="text" id="textoingresado" style="text-transform:lowercase; margin-bottom:10px;" onkeyup="javascript:this.value=this.value.toLowerCase();" placeholder="Ingresa el texto que deseas encriptar">
+
+<button class="button is-primary" type="button" onclick="encriptar();" style="border-radius:20px;">
+<i class="fas fa-lock" style="margin-right:5px;"></i> Encriptar
+</button> 
+
+<button class="button is-primary" type="button" onclick="desencriptar();" style="border-radius:20px; margin-left:10px;">
+  <i class="fas fa-lock-open" style="margin-right:5px;"></i> Desencriptar
+</button> 
+
+
+
+<label class="label" for="mensajeencriptado" style="font-family: 'Comforter Brush', cursive; font-size:30px; text-align:left; color:#000; padding-top:30px; text-shadow: 1px 1px 2px black;">Visualiza el resultado de tu texto encriptado</label>
+<textarea class="textarea" type="text" id="mensajeencriptado" placeholder="Aqui visualizas el resultado de tu mensaje encriptado o desencriptado"></textarea>
+
+<button class="button is-link" type="button" onclick="copiarTexto();" style="border-radius:20px; margin-top:10px;">
+  <i class="far fa-copy" style="margin-right:5px;"></i>Copiar
+</button> 
+</div>
+
+
+<script>
+
+  //Funcion para encriptar el texto ingresado
+
+  function encriptar() {
+    
+    var textoEntrada = document.getElementById("textoingresado").value;
+    
+    var mensajeFinal = document.getElementById("mensajeencriptado");
+    
+    document.getElementById("mensajeencriptado").innerHTML = textoEntrada;
+
+    var messageEncrypt = textoEntrada.replace("e", "enter").replace("i", "imes").replace("a","ai").replace("o","ober").replace("u","ufat");
+
+    document.getElementById("mensajeencriptado").innerHTML = messageEncrypt;
+
+
+  }
+
+  function desencriptar() {
+
+    var textoEntrada = document.getElementById("textoingresado").value;
+
+    var mensajeEncriptado = document.getElementById("mensajeencriptado");
+
+    var mensajeDecrypted = textoEntrada.replace("enter", "e").replace("imes", "i").replace("ai","a").replace("ober","o").replace("ufat","u");
+
+    document.getElementById("mensajeencriptado").innerHTML = mensajeDecrypted;
+
+    console.log(mensajeDecrypted);
+
+    
+  }
+
+  function copiarTexto(){
+
+    var mensajeEncriptado = document.getElementById("mensajeencriptado");
+
+    mensajeEncriptado.select();
+
+    mensajeEncriptado.setSelectionRange(0, 99999); /* para moviles */
+
+    navigator.clipboard.writeText(mensajeEncriptado.value);
+
+    alert("El texto: " + mensajeEncriptado.value + " Ha sido copiado con éxito! ");
+
+  }
+
+  
+
+  
+</script>
+
+</body>
+</html>

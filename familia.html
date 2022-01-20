@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+<h2>Familia</h2>
+
+<script>
+
+    function imprimir(frase) {
+        document.write(frase);
+        document.write("</br></br></br>")
+    }
+
+
+var numeroMiembros = parseInt(prompt("Ingresa el numero de miembros que componen tu familia "));
+var contador = 1;
+var totalEdades = 0;
+
+while (contador <= numeroMiembros) {
+    
+    edad = parseInt(prompt("Ingresa la edad de tu familiar "));
+    totalEdades = totalEdades + edad;
+    contador++;
+
+}
+
+promedioEdades = (totalEdades/numeroMiembros);
+
+imprimir("El total de las edades de tu familia es: " + totalEdades)
+imprimir("El promedio de las edades de tu familia es: " + promedioEdades)
+imprimir("END")
+
+</script>
